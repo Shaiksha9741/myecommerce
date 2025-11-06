@@ -30,7 +30,10 @@ node {
     '''
 }
 
+<<<<<<< HEAD
 >>>>>>> a9aae28 (updated)
+=======
+>>>>>>> 57e85fe88e89890a28d1f20c09b9bd1a521d9c44
 
         stage 'Publish results'
             slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"
