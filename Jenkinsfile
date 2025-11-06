@@ -17,18 +17,18 @@ node {
         //     sh 'env/bin/python3.10 manage.py test --testrunner=blog.tests.test_runners.NoDbTestRunner'
 
         stage 'Deploy'
-            sshagent(['ec2-ssh-key']) {
-    sh '''
-    ssh -o StrictHostKeyChecking=no ubuntu@ec2-13.233.53.199.ap-south-1.compute.amazonaws.com <<EOF
-      cd myecommerce
-      git pull
-      source env/bin/activate
-      ./manage.py migrate
-      sudo systemctl restart nginx
-      sudo systemctl restart gunicorn
-    EOF
-    '''
-}
+               sh './deployment/deploy_prod.sh'
+//sshagent(['ec2-ssh-key']) 
+    //ssh -o StrictHostKeyChecking=no ubuntu@ec2-13.233.53.199.ap-south-1.compute.amazonaws.com <<EOF
+      //cd myecommerce
+      //git pull
+      //source env/bin/activate
+      //./manage.py migrate
+      //sudo systemctl restart nginx
+      //sudo systemctl restart gunicorn
+    //EOF
+    //'''
+//}//
 
         stage 'Publish results'
             slackSend color: "good", message: "Build successful: `${env.JOB_NAME}#${env.BUILD_NUMBER}` <${env.BUILD_URL}|Open in Jenkins>"
