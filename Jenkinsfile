@@ -17,7 +17,7 @@ node {
         //     sh 'env/bin/python3.10 manage.py test --testrunner=blog.tests.test_runners.NoDbTestRunner'
 
         stage 'Deploy'
-               sh './deployment/deploy_prod.sh'
+               sh './Deployments/deploy_prod.sh'
 //sshagent(['ec2-ssh-key']) 
     //ssh -o StrictHostKeyChecking=no ubuntu@ec2-13.233.53.199.ap-south-1.compute.amazonaws.com <<EOF
       //cd myecommerce
