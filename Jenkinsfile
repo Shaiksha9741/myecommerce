@@ -19,7 +19,7 @@ node {
         stage 'Deploy'
             sshagent(['ec2-ssh-key']) {
     sh '''
-    ssh -o StrictHostKeyChecking=no ubuntu@ec2-15-207-100-225.ap-south-1.compute.amazonaws.com <<EOF
+    ssh -o StrictHostKeyChecking=no ubuntu@ec2-13.233.53.199.ap-south-1.compute.amazonaws.com <<EOF
       cd myecommerce
       git pull
       source env/bin/activate
