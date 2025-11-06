@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7z48pt(mnz16a#zdsrcefrj^26mwi+_p&!2*1qq5sno*m33$ol
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['myecommerce.com', '43.204.101.8']
 
 
 # Application definition
@@ -130,7 +130,7 @@ import os
 STATIC_URL = 'static/'
 
 # Directory where static files will be collected
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join( BASE_DIR,'static')
